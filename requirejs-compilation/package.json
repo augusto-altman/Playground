@@ -1,0 +1,15 @@
+{
+  "name": "requirejs-compilation",
+  "version": "0.0.0",
+  "description": "Using the requirejs optimizer",
+  "main": "index.js",
+  "dependencies": {
+    "requirejs": "^2.1.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Augusto Altman Quaranta",
+  "license": "MIT"
+}
