@@ -1,43 +1,26 @@
-Playing with the requirejs optimizer
+Playing with the requirejs compilation
 =========
 
-Here I am testing the requirejs optimizer in order to prove that the tool automagically order the modules in the optimized file by based on their dependencies. So if a module A depends on a module B then the module B will be above the module A in the optimized file.
+Here I am testing javascript files "compilation" (it's just a smart concatenation) with RequireJS. The [RequireJS optimizer](http://requirejs.org/docs/optimization.html) (also known as r.js) is used to concatenate the modules in the proper order in one single file. Also the RequireJS syntatic ritual is erased using the __onBuilWrite__ property of the r.js configuration file. For more information about this technique please visit [this blog post](http://augustoaltman.tumblr.com/).
 
-There are two different projects 'order-1' and 'order-2'. They both have the same modules A, B and C. The only difference is that the modules have different dependecies, then the optimized file results with the modules arrenged in different orders.
+In this folder you will find the r.js tool (RequireJS optimizer), a file called __build.js__ which is the r.js configuration file and a __src__ subfolder containing some RequireJS modules that compose a fake library which is supposed to consume some fake REST api.
 
-All the instructions below assume that your shell is located in this directory (playground/requirejs-optimization)
+All the instructions below assume that your shell is located in this directory (cd -SOMEPATH-/playground/requirejs-compilation).
 
-Enviroment setup
+Environment setup
 ---------
 
 Install [node.js](http://nodejs.org/).
 
-Optimization of the 'order-1' project
+Info
 ---------
 
-In this project the module A depends on the module B, and the module B depends on the module C. The dependency chain results in: A->B->C
+In the configuration file you can choose which modules to include in the compilated file by just changing the __include__ property. Also you are able to play with any other valid property like __paths__ or __wrap__, for example. Check [this](https://github.com/jrburke/r.js/blob/master/build/example.build.js) for more information about the r.js configuration file's properties.
 
-The requirejs configuration is located in: 'order-1/build.js'
-
-To optimize the modules execute:
+To compile the modules execute:
 
 ```shell
-$ node r.js -o .\order-1\build.js
+$ node r.js -o build.js
 ```
 
-You will find the optimized file in: 'order-1/optimized.order-1.js'. As you can see the modules in this file are arrenged first the module C then the module B and finally the module A, just as its dependency chain.
-
-Optimization of the order-2 project
----------
-
-In this project the module A depends on the module C, and the module C depends on the module B. The dependency chain results in: A->C->B
-
-The requirejs configuration is located in: 'order-1/build.js'
-
-To optimize the modules execute:
-
-```shell
-$ node r.js -o .\order-2\build.js
-```
-
-You will find the optimized file in: 'order-2/optimized.order-2.js'. As you can see the modules in this file are arrenged first the module B then the module C and finally the module A, just as its dependency chain.
+You will find the compiled file in: './compiled.js'. As you can see the modules in this file are arrenged in such a way that always have their dependencies above. Also you will find clean code, without any RequireJS __keyword__ (like define or require). So it's valid claim that we are using here the r.js tool as a very smart concatenator.
