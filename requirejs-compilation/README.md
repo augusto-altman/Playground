@@ -1,7 +1,7 @@
 Playing with the requirejs compilation
 =========
 
-Here I am testing javascript files "compilation" (it's just a smart concatenation) with RequireJS. The [RequireJS optimizer](http://requirejs.org/docs/optimization.html) (also known as r.js) is used to concatenate the modules in the proper order in one single file. Also the RequireJS syntatic ritual is erased using the __onBuilWrite__ property of the r.js configuration file. For more information about this technique please visit [this blog post](http://augustoaltman.tumblr.com/).
+Here I am testing javascript files "compilation" (it's just a smart concatenation) with RequireJS. The [RequireJS optimizer](http://requirejs.org/docs/optimization.html) (also known as r.js) is used to concatenate the modules in the proper order in one single file. Also the RequireJS syntatic ritual is erased using the __onBuilWrite__ property of the r.js configuration file. For more information about this technique please visit [this blog post](http://augustoaltman.tumblr.com/post/103432024045/from-requirejs-modules-to-standalone-javascript).
 
 In this folder you will find the r.js tool (RequireJS optimizer), a file called __build.js__ which is the r.js configuration file and a __src__ subfolder containing some RequireJS modules that compose a fake library which is supposed to consume some fake REST api.
 
