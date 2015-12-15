@@ -1,9 +1,9 @@
 Creating a java based FTP service using a virtual file system
 =========
 
-The idea of this POC is to expose an FTP service that consumes a *virtual file system* instead of the OS native file system. In this case, the virtual file system is just a static class ([FutbolFileSystem](https://github.com/augusto-altman/Playground/blob/master/apache-mina-ftp-virtual-file-system/src/futbolFileSystem/FutbolFileSystem.java)) that encapsulates a HashMap of futbol teams and their players. Each team is considered a *virtual directory* and each team's player is considered a *virtual file*. For this POC request concurrency is not allowed since there is no lock over the HashMap (nevertheless it would be very easy to refactor the static class in order to support concurrent requests). Also, file (players) reading and writting functionallity is not implemented.
+The idea of this POC is to expose an FTP service that consumes a *virtual file system* instead of the OS native file system. In this case, the virtual file system is just a static class ([FutbolFileSystem](https://github.com/augusto-altman/Playground/blob/master/apache-mina-ftp-virtual-file-system/src/futbolFileSystem/FutbolFileSystem.java)) that encapsulates a HashMap of futbol teams and their players. Each team is considered a *virtual directory* and each team's player is considered a *virtual file*. For this POC request concurrency is not allowed since there is no lock over the HashMap (nevertheless it would be very easy to refactor the FutbolFileSystem class in order to support concurrent requests). Also, file (players) reading and writting functionallity is not implemented.
 
-The project was coded uses Java and the [Apache Mina library](https://mina.apache.org/ftpserver-project/features.html). The project dependencies are directly included in the repo since I haven't created a gradle/maven/ant configuration.
+The project was coded using Java and the [Apache Mina library](https://mina.apache.org/ftpserver-project/features.html). Its dependencies are directly included in the repo on the **\/lib** folder since I haven't created a gradle/maven/ant configuration.
 
 Environment setup
 ---------
