@@ -27,3 +27,5 @@ user.setHomeDirectory("/");
 And set the home directory to whatever path you want.
 
 When using FileZilla for testing your service remember to refresh (f5) the remote directory in order to get the newest data and to discard the local cache.
+
+The documentation for the FTP server Mina library can be found [here](http://www.docjar.com/docs/api/org/apache/ftpserver/FtpServerFactory.html).
