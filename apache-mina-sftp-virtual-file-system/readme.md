@@ -10,4 +10,4 @@ Info
 
 The credentials for logging into the SFTP server are hardcoded in the **Authenticator** class. Just FYI they are *username = tito* and *password = 7170*.
 
-For testing I recommend using [FileZilla](https://filezilla-project.org/) as a SFTP client. When using it remember to refresh (f5) the remote directory in order to get the newest data and to discard the local cache.
+For testing I recommend using [FileZilla](https://filezilla-project.org/) as an SFTP client. When using it remember to refresh (F5) the remote directory in order to get the newest data and to discard the local cache.
